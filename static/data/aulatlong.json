@@ -1,0 +1,52 @@
+[
+    {
+        "city": "Adelaide",
+        "latitude": 138.6,
+        "longitude": -34.93
+    },
+    {
+        "city": "Alice",
+        "latitude": 133.87,
+        "longitude": -23.7
+    },
+    {
+        "city": "Brisbane",
+        "latitude": 153.02,
+        "longitude": -27.46
+    },
+    {
+        "city": "Broome",
+        "latitude": 122.25,
+        "longitude": -18
+    },
+    {
+        "city": "Cairns",
+        "latitude": 145.75,
+        "longitude": -16.92
+    },
+    {
+        "city": "Canberra",
+        "latitude": 149.13,
+        "longitude": -35.31
+    },
+    {
+        "city": "Darwin",
+        "latitude": 130.85,
+        "longitude": -12.43
+    },
+    {
+        "city": "Melbourne",
+        "latitude": 144.96,
+        "longitude": -37.81
+    },
+    {
+        "city": "Perth",
+        "latitude": 115.84,
+        "longitude": -31.96
+    },
+    {
+        "city": "Sydney",
+        "latitude": 151.21,
+        "longitude": -33.87
+    }
+]
