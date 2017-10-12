@@ -24,8 +24,10 @@ module.exports = {
     },
     // add your custom rules here
     'rules': {
+        // no-undef
+        'no-undef': ["warn"],
         // max-len
-        'max-len': ["warn", 120],
+        'max-len': "off",
         // 4-space indentation
         'indent': ["warn", 4],
         // don't require .vue extension when importing
