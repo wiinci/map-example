@@ -6,7 +6,6 @@
             </nav>
         </header>
         <main class="   u-padding-y">
-            <h1>🗺 Map example</h1>
             <el-map :map-data="mapData"></el-map>
         </main>
     </div>
@@ -102,7 +101,7 @@ h5 {
 }
 
 main {
-    max-width: 60vw;
+    max-width: 80vw;
     margin: 0 auto;
 }
 
