@@ -1,6 +1,6 @@
 <template>
     <div class="map-container">
-        <map-area :data="mapData[locationIndex]"></map-area>
+        <map-area :place="mapData[locationIndex]"></map-area>
         <map-controls @locationChange="updateArea" :data="mapData"></map-controls>
     </div>
 </template>
