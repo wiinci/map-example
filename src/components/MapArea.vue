@@ -3,8 +3,12 @@
         <h2>{{ place.city }}</h2>
         <p>{{ place.longitude }}, {{ place.latitude }}</p>
 
-        <v-map :zoom="zoom" :center="[place.longitude, place.latitude]">
-            <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
+        <v-map :zoom="zoom"
+            :minZoom="minZoom"
+            :maxZoom="maxZoom"
+            :center="[place.longitude, place.latitude]">
+            <v-tilelayer :url="url"
+                :attribution="attribution"></v-tilelayer>
             <v-marker :lat-lng="{ lng: place.longitude, lat: place.latitude }"></v-marker>
         </v-map>
     </div>
@@ -23,9 +27,11 @@ export default {
     },
     data() {
         return {
+            minZoom: 3,
             zoom: 4,
-            url: 'https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png',
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 10,
+            url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         };
     },
     components: {
