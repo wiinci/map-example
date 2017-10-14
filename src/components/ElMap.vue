@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '~@/assets/variables/global';
+@import (reference) '~@/assets/variables/global';
 
 .map-container {
     display: grid;

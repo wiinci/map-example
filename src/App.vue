@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '~@/assets/variables/global';
+@import (reference) '~@/assets/variables/global';
 
 html {
     box-sizing: border-box;
