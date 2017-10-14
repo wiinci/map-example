@@ -1,8 +1,10 @@
 <template>
     <div class="map-controls">
         <ul>
-            <li v-for="place in data" :key="place.id">
-                <button type="button" @click.prevent="handleClick">{{ place.city }}</button>
+            <li v-for="place in data"
+                :key="place.id">
+                <button type="button"
+                    @click.prevent="handleClick">{{ place.city }}</button>
             </li>
         </ul>
     </div>
