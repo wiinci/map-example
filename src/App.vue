@@ -5,7 +5,7 @@
                 <h1 class="page-header_text">VueJS Map Test</h1>
             </nav>
         </header>
-        <main class="   u-padding-y">
+        <main class="u-padding-y">
             <el-map :map-data="mapData"></el-map>
         </main>
     </div>
