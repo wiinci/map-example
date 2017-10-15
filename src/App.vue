@@ -49,6 +49,8 @@ body {
     margin: 0;
     position: relative;
     color: @black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: @normal-text;
     font-family: -apple-system,
     BlinkMacSystemFont,
