@@ -29,8 +29,8 @@ export default {
     },
     data() {
         return {
-            minZoom: 3,
-            zoom: 4,
+            minZoom: 4,
+            zoom: 5,
             maxZoom: 10,
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -56,6 +56,6 @@ h2 {
     width: 100%;
     height: 100%;
     padding: @base-unit;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #CBAA89;
 }
 </style>
