@@ -2,7 +2,7 @@
     <div class="map-container">
         <map-area :place="mapData[locationIndex]"></map-area>
         <map-controls @locationChange="updateArea"
-            :data="mapData"></map-controls>
+            :mapData="mapData"></map-controls>
     </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         updateArea(event) {
-            this.locationIndex = this.mapData.findIndex(place => place.city === event.target.textContent);
+            this.locationIndex = this.mapData.findIndex(place => place.city === event.target.innerText);
         },
     },
 };
