@@ -1,7 +1,10 @@
 <template>
     <div class="map-controls">
+        <input clas="c-textInput"
+            type="text"
+            v-model="filterText">
         <ul>
-            <li v-for="place in mapData"
+            <li v-for="place in filteredLocations"
                 :class="{active: label === place.city}"
                 :key="place.id">
                 <button type="button"
@@ -24,13 +27,23 @@ export default {
     },
     data() {
         return {
+            filterText: '',
             label: this.mapData[0].city,
         };
     },
     methods: {
         handleClick(event) {
             this.label = event.target.innerText;
-            this.$emit('locationChange', event);
+            this.$emit('locationChange', event.target.innerText);
+        },
+    },
+    computed: {
+        filteredLocations() {
+            const filter = new RegExp(this.filterText, 'i');
+            const filteredMapData = this.mapData.filter(el => el.city.match(filter));
+            this.label = filteredMapData[0].city;
+            this.$emit('locationChange', filteredMapData[0].city);
+            return filteredMapData;
         },
     },
 };
@@ -55,6 +68,10 @@ li {
             border-top-color: #25140D;
         }
     }
+}
+
+.map-controls {
+    min-height: 100vh / 1.62;
 }
 
 .c-button--control {
