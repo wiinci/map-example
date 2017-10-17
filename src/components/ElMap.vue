@@ -28,8 +28,8 @@ export default {
         MapControls,
     },
     methods: {
-        updateArea(event) {
-            this.locationIndex = this.mapData.findIndex(place => place.city === event.target.innerText);
+        updateArea(label) {
+            this.locationIndex = this.mapData.findIndex(place => place.city === label);
         },
     },
 };
