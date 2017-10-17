@@ -1,8 +1,11 @@
 <template>
     <div class="map-controls">
-        <input clas="c-textInput"
+        <label for="filterText">Search within places</label>
+        <input class="c-textInput c-mapFilter"
+            id="filterText"
             type="text"
             v-model="filterText">
+        <h5>Places</h5>
         <ul>
             <li v-for="place in filteredLocations"
                 :class="{active: label === place.city}"
@@ -52,9 +55,15 @@ export default {
 <style lang="less" scoped>
 @import '~@/assets/variables/global';
 
+h5 {
+    font-weight: 400;
+    margin-bottom: 1.6rem;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
@@ -72,6 +81,25 @@ li {
 
 .map-controls {
     min-height: 100vh / 1.62;
+}
+
+.c-textInput {
+    height: 3.6rem;
+    width: 100%;
+    border: 2px solid #CBAA89;
+    border-radius: 0.4rem;
+    padding: 0 0.8rem;
+    font-size: @small-text;
+    font-weight: 500;
+
+    &:focus {
+        outline: 0;
+        border-color: #25140D;
+    }
+}
+
+.c-mapFilter {
+    margin: 0.8rem 0 2.4rem;
 }
 
 .c-button--control {
