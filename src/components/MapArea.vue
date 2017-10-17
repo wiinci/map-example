@@ -54,7 +54,7 @@ h2 {
 
 .map-container {
     width: 100%;
-    height: 100%;
+    height: 100% / 1.62;
     padding: @base-unit;
     border: 1px solid #CBAA89;
 }
