@@ -5,17 +5,21 @@
             id="filterText"
             type="text"
             v-model="filterText">
-        <h5>Places</h5>
-        <ul>
-            <li v-for="place in filteredLocations"
-                :class="{active: label === place.city}"
-                :key="place.id">
-                <button type="button"
-                    class="c-button--control"
+        <div v-if="filteredLocations.length > 0">
+            <h5>Places</h5>
+            <ul>
+                <li v-for="place in filteredLocations"
                     :class="{active: label === place.city}"
-                    @click.prevent="handleClick">{{ place.city }}</button>
-            </li>
-        </ul>
+                    :key="place.id">
+                    <button type="button"
+                        class="c-button--control"
+                        :class="{active: label === place.city}"
+                        @click.prevent="handleClick">{{ place.city }}</button>
+                </li>
+            </ul>
+        </div>
+
+        <h5 v-else>Place not in list … try again.</h5>
     </div>
 </template>
 
@@ -44,8 +48,10 @@ export default {
         filteredLocations() {
             const filter = new RegExp(this.filterText, 'i');
             const filteredMapData = this.mapData.filter(el => el.city.match(filter));
-            this.label = filteredMapData[0].city;
-            this.$emit('locationChange', filteredMapData[0].city);
+            if (filteredMapData.length > 0) {
+                this.label = filteredMapData[0].city;
+                this.$emit('locationChange', filteredMapData[0].city);
+            }
             return filteredMapData;
         },
     },
