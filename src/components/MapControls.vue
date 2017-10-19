@@ -19,7 +19,7 @@
             </ul>
         </div>
 
-        <h5 v-else>Place not in list … try again.</h5>
+        <h5 v-else>Place not found. Please try again.</h5>
     </div>
 </template>
 
