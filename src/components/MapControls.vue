@@ -2,24 +2,28 @@
     <div class="map-controls">
         <label for="filterText">Search within places</label>
         <input class="c-textInput c-mapFilter"
+            :class="{ 'c-textInput--error': error }"
             id="filterText"
             type="text"
-            v-model="filterText">
+            v-model="filterText"
+            aria-describedby="errorText"
+            autofocus>
+        <p v-if="error"
+            class="c-fieldHelp"
+            id="errorText">No such city in map data, please try a different search term.</p>
         <div v-if="filteredLocations.length > 0">
             <h5>Places</h5>
             <ul>
                 <li v-for="place in filteredLocations"
-                    :class="{active: label === place.city}"
+                    :class="{ active: label === place.city }"
                     :key="place.id">
                     <button type="button"
                         class="c-button--control"
-                        :class="{active: label === place.city}"
+                        :class="{ active: label === place.city }"
                         @click.prevent="handleClick">{{ place.city }}</button>
                 </li>
             </ul>
         </div>
-
-        <h5 v-else>Place not found. Please try again.</h5>
     </div>
 </template>
 
@@ -34,6 +38,7 @@ export default {
     },
     data() {
         return {
+            error: false,
             filterText: '',
             label: this.mapData[0].city,
         };
@@ -48,10 +53,15 @@ export default {
         filteredLocations() {
             const filter = new RegExp(this.filterText, 'i');
             const filteredMapData = this.mapData.filter(el => el.city.match(filter));
+
             if (filteredMapData.length > 0) {
+                this.error = false;
                 this.label = filteredMapData[0].city;
                 this.$emit('locationChange', filteredMapData[0].city);
+            } else {
+                this.error = true;
             }
+
             return filteredMapData;
         },
     },
@@ -63,7 +73,7 @@ export default {
 
 h5 {
     font-weight: 400;
-    margin-bottom: 1.6rem;
+    margin-bottom: 2.4rem;
 }
 
 ul {
@@ -85,10 +95,6 @@ li {
     }
 }
 
-.map-controls {
-    min-height: 100vh / 1.62;
-}
-
 .c-textInput {
     height: 3.6rem;
     width: 100%;
@@ -102,10 +108,26 @@ li {
         outline: 0;
         border-color: #25140D;
     }
+
+    &--error {
+        border-color: #D1242A;
+
+        &:focus {
+            border-color: #D1242A;
+        }
+
+        +.c-fieldHelp {
+            margin-top: -2.4rem;
+            margin-bottom: 3.2rem;
+            color: #D1242A;
+            font-size: @small-text;
+            font-weight: 500;
+        }
+    }
 }
 
 .c-mapFilter {
-    margin: 0.8rem 0 2.4rem;
+    margin: 0.8rem 0 3.2rem;
 }
 
 .c-button--control {
