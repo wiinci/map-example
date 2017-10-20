@@ -41,6 +41,7 @@ export default {
 .map-container {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
-    grid-column-gap: (@base-unit * 5);
+    grid-column-gap: 2.4rem;
+    grid-auto-rows: minmax(62vh, auto);
 }
 </style>
