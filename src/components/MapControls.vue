@@ -11,7 +11,7 @@
             autofocus>
         <p v-if="error"
             class="c-fieldHelp"
-            id="errorText">No such city in map data, please try a different search term.</p>
+            id="errorText">City not found. Please try a different search term.</p>
         <div v-if="filteredLocations.length > 0">
             <h5>Places</h5>
             <ul>
