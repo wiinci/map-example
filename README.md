@@ -1,6 +1,6 @@
-# map-example
+# Vue JS Map Example
 
-> A Vue.js project
+![Example showing select and filter actions on a map with Australian cities](./vue-map.gif)
 
 ## Build Setup
 
