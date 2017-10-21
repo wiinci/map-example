@@ -24,6 +24,7 @@ import Vue2Leaflet from 'vue2-leaflet';
 // https://github.com/Leaflet/Leaflet/issues/4968
 // https://github.com/KoRiGaN/Vue2Leaflet/issues/28#issuecomment-320227460
 import L from 'leaflet';
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.imagePath = '';
 L.Icon.Default.mergeOptions({
