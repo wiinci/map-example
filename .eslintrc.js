@@ -30,6 +30,10 @@ module.exports = {
         indent: ['warn', 4],
         // Multi-line comma dangle
         'comma-dangle': ['error', 'only-multiline'],
+        // Turn off no-underscore-dangle
+        'no-underscore-dangle': 'off',
+        // Turn off global-require
+        'global-require': 'off',
         // don't require .vue extension when importing
         'import/extensions': [
             'error',
