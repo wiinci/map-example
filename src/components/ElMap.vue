@@ -15,23 +15,25 @@ export default {
     props: {
         mapData: {
             type: Array,
-            required: true,
-        },
+            required: true
+        }
     },
     data() {
         return {
-            locationIndex: 0,
+            locationIndex: 0
         };
     },
     components: {
         MapArea,
-        MapControls,
+        MapControls
     },
     methods: {
         updateArea(label) {
-            this.locationIndex = this.mapData.findIndex(place => place.city === label);
-        },
-    },
+            this.locationIndex = this.mapData.findIndex(
+                place => place.city === label
+            );
+        }
+    }
 };
 </script>
 

@@ -33,26 +33,28 @@ export default {
     props: {
         mapData: {
             type: Array,
-            required: true,
-        },
+            required: true
+        }
     },
     data() {
         return {
             error: false,
             filterText: '',
-            label: this.mapData[0].city,
+            label: this.mapData[0].city
         };
     },
     methods: {
         handleClick(event) {
             this.label = event.target.innerText;
             this.$emit('locationChange', event.target.innerText);
-        },
+        }
     },
     computed: {
         filteredLocations() {
             const filter = new RegExp(this.filterText, 'i');
-            const filteredMapData = this.mapData.filter(el => el.city.match(filter));
+            const filteredMapData = this.mapData.filter(el =>
+                el.city.match(filter)
+            );
 
             if (filteredMapData.length > 0) {
                 this.error = false;
@@ -63,8 +65,8 @@ export default {
             }
 
             return filteredMapData;
-        },
-    },
+        }
+    }
 };
 </script>
 
@@ -83,14 +85,14 @@ ul {
 }
 
 li {
-    +li {
-        border-top: 1px solid #CBAA89;
+    + li {
+        border-top: 1px solid #cbaa89;
     }
 
     &.active {
-        border-top-color: #25140D;
-        +li {
-            border-top-color: #25140D;
+        border-top-color: #25140d;
+        + li {
+            border-top-color: #25140d;
         }
     }
 }
@@ -98,7 +100,7 @@ li {
 .c-textInput {
     height: 3.6rem;
     width: 100%;
-    border: 2px solid #CBAA89;
+    border: 2px solid #cbaa89;
     border-radius: 0.4rem;
     padding: 0 0.8rem;
     font-size: @small-text;
@@ -106,20 +108,20 @@ li {
 
     &:focus {
         outline: 0;
-        border-color: #25140D;
+        border-color: #25140d;
     }
 
     &--error {
-        border-color: #D1242A;
+        border-color: #d1242a;
 
         &:focus {
-            border-color: #D1242A;
+            border-color: #d1242a;
         }
 
-        +.c-fieldHelp {
+        + .c-fieldHelp {
             margin-top: -2.4rem;
             margin-bottom: 3.2rem;
-            color: #D1242A;
+            color: #d1242a;
             font-size: @small-text;
             font-weight: 500;
         }
@@ -140,19 +142,19 @@ li {
     outline: none;
     cursor: pointer;
     background-color: transparent;
-    color: contrast(#E7DAC7, #25140D, #fff);
+    color: contrast(#e7dac7, #25140d, #fff);
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
     &:hover,
     &:focus {
         outline: 0;
-        background-color: lighten(#E7DAC7, 10%);
+        background-color: lighten(#e7dac7, 10%);
     }
 
     &.active {
         outline: 0;
-        background-color: #25140D;
-        color: contrast(#25140D, #25140D, #fff);
+        background-color: #25140d;
+        color: contrast(#25140d, #25140d, #fff);
     }
 }
 </style>

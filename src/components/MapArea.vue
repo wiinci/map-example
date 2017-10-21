@@ -24,8 +24,8 @@ export default {
     props: {
         place: {
             type: Object,
-            required: true,
-        },
+            required: true
+        }
     },
     data() {
         return {
@@ -33,20 +33,21 @@ export default {
             zoom: 5,
             maxZoom: 10,
             url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            attribution:
+                '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         };
     },
     components: {
         'v-map': Vue2Leaflet.Map,
         'v-tilelayer': Vue2Leaflet.TileLayer,
-        'v-marker': Vue2Leaflet.Marker,
-    },
+        'v-marker': Vue2Leaflet.Marker
+    }
 };
 </script>
 
 <style lang="less" scoped>
 @import (reference) '~@/assets/variables/global';
-@import "~leaflet/dist/leaflet.css";
+@import '~leaflet/dist/leaflet.css';
 
 h2 {
     font-weight: 300;
@@ -56,6 +57,6 @@ h2 {
     width: 100%;
     height: 100vh / 1.62;
     padding: @base-unit;
-    border: 1px solid #CBAA89;
+    border: 1px solid #cbaa89;
 }
 </style>

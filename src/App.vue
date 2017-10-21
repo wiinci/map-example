@@ -18,13 +18,13 @@ import MapJSON from '../static/data/aulatlong.json';
 export default {
     name: 'app',
     components: {
-        ElMap,
+        ElMap
     },
     data() {
         return {
-            mapData: MapJSON,
+            mapData: MapJSON
         };
-    },
+    }
 };
 </script>
 
@@ -52,18 +52,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: @normal-text;
-    font-family: -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen-Sans,
-    Ubuntu,
-    Cantarell,
-    "Helvetica Neue",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 strong {
