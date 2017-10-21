@@ -4,8 +4,9 @@
         <input class="c-textInput c-mapFilter"
             :class="{ 'c-textInput--error': error }"
             id="filterText"
-            type="text"
+            type="search"
             v-model="filterText"
+            @keyup.esc="clearField"
             aria-describedby="errorText"
             autofocus>
         <p v-if="error"
@@ -47,6 +48,12 @@ export default {
         handleClick(event) {
             this.label = event.target.innerText;
             this.$emit('locationChange', event.target.innerText);
+        },
+
+        clearField() {
+            this.filterText = '';
+            this.label = this.mapData[0].city;
+            this.$emit('locationChange', this.mapData[0].city);
         }
     },
     computed: {
