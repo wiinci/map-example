@@ -10,7 +10,7 @@
             autofocus>
         <p v-if="error"
             class="c-fieldHelp"
-            id="errorText">City not found. Please try a different search term.</p>
+            id="errorText">No matching place in list. Please try a different search term.</p>
         <div v-if="filteredLocations.length > 0">
             <h5>Places</h5>
             <ul>
