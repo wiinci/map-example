@@ -69,7 +69,8 @@ h2 {
 
 .map-container {
     width: 100%;
-    height: 100vh / 1.62;
+    height: 100% / 1.62;
+    max-height: 100vh / 1.62;
     padding: @base-unit;
     border: 1px solid #cbaa89;
 }
