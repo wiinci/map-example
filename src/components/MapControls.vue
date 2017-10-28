@@ -75,7 +75,7 @@ export default {
 
 h5 {
     font-weight: 400;
-    margin-bottom: 2.4rem;
+    margin-bottom: 0.8rem;
 }
 
 ul {
