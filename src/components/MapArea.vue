@@ -1,8 +1,5 @@
 <template>
     <div class="map-area">
-        <h2>{{ place.city }}</h2>
-        <p>{{ place.longitude }}, {{ place.latitude }}</p>
-
         <div class="map-container">
             <v-map :zoom="zoom"
                 :minZoom="minZoom"
@@ -63,14 +60,10 @@ export default {
 @import (reference) '~@/assets/variables/global';
 @import '~leaflet/dist/leaflet.css';
 
-h2 {
-    font-weight: 300;
-}
-
 .map-container {
     width: 100%;
     height: 100% / 1.62;
-    max-height: 100vh / 1.62;
+    // max-height: 100vh / 1.62;
     padding: @base-unit;
     border: 1px solid #cbaa89;
 }
