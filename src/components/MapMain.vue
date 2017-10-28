@@ -3,7 +3,7 @@
         <map-header :place="mapData[locationIndex]"></map-header>
         <div class="map-container">
             <map-area :place="mapData[locationIndex]"></map-area>
-            <map-controls @locationChange="updateArea"
+            <map-controls @locationChange="updateMapArea"
                 :mapData="mapData"></map-controls>
         </div>
     </div>
@@ -33,9 +33,9 @@ export default {
         MapControls
     },
     methods: {
-        updateArea(label) {
+        updateMapArea(city) {
             this.locationIndex = this.mapData.findIndex(
-                place => place.city === label
+                place => place.city === city
             );
         }
     }

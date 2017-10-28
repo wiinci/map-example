@@ -11,10 +11,10 @@
         <p v-if="error"
             class="c-fieldHelp"
             id="errorText">No matching place in list. Please try a different search term.</p>
-        <div v-if="filteredLocations.length > 0">
+        <div v-if="filteredCities.length > 0">
             <h5>Places</h5>
             <ul>
-                <li v-for="place in filteredLocations"
+                <li v-for="place in filteredCities"
                     :class="{ active: label === place.city }"
                     :key="place.id">
                     <button type="button"
@@ -50,7 +50,7 @@ export default {
         }
     },
     computed: {
-        filteredLocations() {
+        filteredCities() {
             const filter = new RegExp(this.filterText, 'i');
             const filteredMapData = this.mapData.filter(el =>
                 el.city.match(filter)
