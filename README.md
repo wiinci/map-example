@@ -42,8 +42,9 @@ A search field in this component allows quick filtering of the dataset. Filterin
 | `mapData` | JSON-formatted lat/long data for ten Australian cities | Array | `true`   | none    |
 
 #### Events
-|Event name|Description|
-|`locationChange`|Triggered when user clicks one of the cities listed in `MapControls` sidebar or when the filtered list is updated and the first item is selected|
+| Event name       | Description                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `locationChange` | Triggered when user clicks one of the cities listed in `MapControls` sidebar or when the filtered list is updated and the first item is selected |
 
 #### Methods
 | Method        | Description                                                                  | Parameters |
