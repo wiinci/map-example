@@ -6,19 +6,19 @@
             </nav>
         </header>
         <main class="u-padding-y">
-            <el-map :map-data="mapData"></el-map>
+            <map-main :map-data="mapData"></map-main>
         </main>
     </div>
 </template>
 
 <script>
-import ElMap from '@/components/ElMap';
+import MapMain from '@/components/MapMain';
 import MapJSON from '../static/data/aulatlong.json';
 
 export default {
     name: 'app',
     components: {
-        ElMap
+        MapMain
     },
     data() {
         return {
