@@ -14,7 +14,7 @@ This is a parent component for `MapArea` and `MapControls`. A JSON-formatted map
 #### Props
 | Prop      | Description                                            | Type  | Required | Default |
 | --------- | ------------------------------------------------------ | ----- | -------- | ------- |
-| `mapData` | JSON-formatted lat/long data for ten Australian cities | Array | `true`   | none    |
+| `mapData` | JSON-formatted lat/long data for [ten Australian cities](https://github.com/wiinci/map-example/blob/master/static/data/aulatlong.json) | Array | `true`   | none    |
 
 #### Methods
 | Method          | Description                                            | Parameters |
@@ -39,7 +39,7 @@ A search field in this component allows quick filtering of the dataset. Filterin
 #### Props
 | Prop      | Description                                            | Type  | Required | Default |
 | --------- | ------------------------------------------------------ | ----- | -------- | ------- |
-| `mapData` | JSON-formatted lat/long data for ten Australian cities | Array | `true`   | none    |
+| `mapData` | JSON-formatted lat/long data for [ten Australian cities](https://github.com/wiinci/map-example/blob/master/static/data/aulatlong.json) | Array | `true`   | none    |
 
 #### Events
 | Event name       | Description                                                                                                                                      |
